@@ -37,14 +37,14 @@ class Queue:
             self.queue.append(newCar)                           # add car
             self.size += 1                                      # size + 1
         else:                                                   # else
-            print("* Queue Is Full *")                              # alert users
+            print("* Queue Is Full *")                          # alert users
 
     def dequeue(self):                                          # remove from queue
         if(self.isEmpty() == False):                            # if queue is not empty
-            self.queue.pop()                                          # remove
+            self.queue.pop()                                    # remove
             self.size -= 1                                      # size minus 1
         else:                                                   # else
-            print("* Queue Is Empty *")                             # alert user
+            print("* Queue Is Empty *")                         # alert user
 
     def isFull(self):                                           # boolean is full
         return self.size == self.maxSize                        # if size = maxsize
@@ -92,7 +92,7 @@ def runProgram():
                 ''')
 
 
-        command = input("\tPlease Enter A Command: ")         # enter command
+        command = input("\tPlease Enter A Command: ")           # enter command
                                                                 # if statements for commands
         if (command.lower() == "add"):                          # add cars
             add(laneArray)
@@ -101,7 +101,7 @@ def runProgram():
         elif (command.lower() == "exit"):                       # exit program
             exitProgram()
         else:                                                   # if input is invalid
-            print("\t* Error: Invalid Input *")                       # print error message
+            print("\t* Error: Invalid Input *")                 # print error message
 
 def add(laneArray):                                             # add lane, takes in lane array
 
@@ -115,7 +115,7 @@ def add(laneArray):                                             # add lane, take
 
     laneCount = 0                                                          # lane count set to 0
     count = 0                                                              # count set to 0
-    numOfCars = int(input("\n\tHow Many Cars Would You Like To Add: "))  # ask user to input num of cars
+    numOfCars = int(input("\n\tHow Many Cars Would You Like To Add: "))    # ask user to input num of cars
     print("")
     while(count < numOfCars and laneCount <= 4):                           # while count is less than input and
                                                                            # lanes are available
@@ -129,25 +129,25 @@ def add(laneArray):                                             # add lane, take
             laneCount += 1                                                 # set to next lane
             carCount = 0                                                   # reset car count
         else:                                                              # else
-            print("\tOut Of Space")                                      # out of space
+            print("\tOut Of Space")                                        # out of space
             totalCar = count + 1                                           # total cars loaded
             carsDenied = numOfCars - totalCar                              # total cars denied
-            print("\tTotal Of " + totalCar + " Cars Loaded ")            # print results for cars loaded
-            print("\t" + carsDenied + " Cars Unable To Fit")             # print results for cars unable to fit
+            print("\tTotal Of " + totalCar + " Cars Loaded ")              # print results for cars loaded
+            print("\t" + carsDenied + " Cars Unable To Fit")               # print results for cars unable to fit
 
-    laneNum = 1                                                                       # set lane name to 1
-    for i in range(laneCount+1):                                                      # loop through lanes
-        if(laneNum <= 5):                                                             # if lane are available
-                                                                                      # print results
+    laneNum = 1                                                                               # set lane name to 1
+    for i in range(laneCount+1):                                                              # loop through lanes
+        if(laneNum <= 5):                                                                     # if lane are available
+                                                                                              # print results
             print("\t" + str(numOfCarsLoaded[i]) + " Cars Loaded Into Lane " + str(laneNum))
-            laneNum += 1                                                              # go to next lane
-        else:                                                                         # else if no more room
-            print("\n\t* Out of space *\n")                                         # alert user
-            totalCar = count                                                          # total number of cars loaded
-            carsDenied = numOfCars - totalCar                                         # cars unable to fit
-            print("\tTotal Of " + str(totalCar) + " Cars Created ")                 # print results for cars loaded
-            print("\t" + str(carsDenied) + " Cars Unable To Fit")                   # print results for cars denied
-    return laneArray                                                                  # return array of lanes
+            laneNum += 1                                                                      # go to next lane
+        else:                                                                                 # else if no more room
+            print("\n\t* Out of space *\n")                                                   # alert user
+            totalCar = count                                                                  # total number of cars loaded
+            carsDenied = numOfCars - totalCar                                                 # cars unable to fit
+            print("\tTotal Of " + str(totalCar) + " Cars Created ")                           # print results for cars loaded
+            print("\t" + str(carsDenied) + " Cars Unable To Fit")                             # print results for cars denied
+    return laneArray                                                                          # return array of lanes
 
 def load(laneArray):
     count = 0                                                      # set count to 0
